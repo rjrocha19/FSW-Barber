@@ -1,0 +1,5 @@
+{
+  "tailwindConfig": ["./styles/tailwind.config.js"],
+  "tabWidth": 2,
+  "semi": false
+}
