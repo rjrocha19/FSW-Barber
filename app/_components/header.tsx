@@ -6,7 +6,7 @@ import { Button } from "./ui/button"
 export default function Header() {
   return (
     <Card>
-      <CardContent>
+      <CardContent className="p-5 flex flex-row items-center justify-between">
         <Image alt="FSW Barber" src="/logo.svg" width={120} height={18} />
         <Button size="icon" variant="outline">
           <MenuIcon />
