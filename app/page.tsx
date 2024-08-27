@@ -3,6 +3,8 @@ import Header from "./_components/header"
 import { Button } from "./_components/ui/button"
 import { Input } from "./_components/ui/input"
 import Image from "next/image"
+import { Card, CardContent } from "./_components/ui/card"
+import { Badge } from "./_components/ui/badge"
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
           </Button>
         </div>
 
+        {/* Image */}
         <div className="relative h-[150px] w-full mt-6">
           <Image
             alt="Agende nos melhores com FWS Barber"
@@ -28,6 +31,22 @@ export default function Home() {
           />
         </div>
 
+        {/* scheduling */}
+        <div>
+          <Card className="mt-6">
+            <CardContent className="flex">
+              {/* Left */}
+              <div className="flex flex-col gap-2 py-5">
+                <Badge>Confirmado</Badge>
+                <h3>Corte de Cabelo</h3>
+                
+                <div className="flex item-center">
+                  
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </main>
   )
