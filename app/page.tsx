@@ -10,8 +10,10 @@ import { Avatar, AvatarImage } from "./_components/ui/avatar"
 export default function Home() {
   return (
     <main>
+      {/* Header */}
       <Header />
       <div className="p-5">
+        {/* Text */}
         <h2 className="text-xl font-bold">Olá, Rodolfo!</h2>
         <p>Segunda-feira, 26 de agosto.</p>
 
@@ -33,8 +35,11 @@ export default function Home() {
         </div>
 
         {/* scheduling */}
+        <h2 className="text-xs font-bold uppercase text-gray-400 mt-6 mb-3">
+          Agendamentos
+        </h2>
         <div>
-          <Card className="mt-6">
+          <Card>
             <CardContent className="flex justify-between p-0">
               {/* Left */}
               <div className="flex flex-col gap-2 py-5 pl-5">
