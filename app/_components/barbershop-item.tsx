@@ -22,8 +22,9 @@ export function BarbershopItem({ barbershop }: BarbershopItemProps) {
             className="object-cover rounded-xl"
           />
 
-          <Badge className="absolute left-2 top-2" variant="secondary">
+          <Badge className="absolute left-2 top-2 space-x-1" variant="secondary">
             <StarIcon size={12} className="fill-primary text-primary" />
+            <p className="text-xs text-gray-400 font-semibold">5,0</p>
           </Badge>
         </div>
 
