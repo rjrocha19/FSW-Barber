@@ -1,3 +1,4 @@
+import { Footer } from "@/app/_components/footer"
 import ServiceItem from "@/app/_components/service-item"
 import { Button } from "@/app/_components/ui/button"
 import { db } from "@/app/_lib/prisma"
@@ -79,14 +80,29 @@ export default async function BarbershopPage({ params }: BarbershopItemProps) {
       </div>
 
       {/* Services */}
-      <div className="p-5">
-        <h2 className="text-xs font-bold uppercase text-gray-400 mb-5">Serviços</h2>
+      <div className="sapce-y-3 border-b border-solid p-5">
+        <h2 className="text-xs font-bold uppercase text-gray-400 mb-5">
+          Serviços
+        </h2>
         <div className="space-y-4">
           {barbershop.services.map((services) => (
             <ServiceItem key={services.id} service={services} />
           ))}
         </div>
       </div>
+
+      {/* Contact */}
+      <div className="p-5">
+        {barbershop.phones.map((phone) => (
+          <div className="flex justify-between" key={phone}>
+            {/* left */}
+            {/* right */}
+          </div>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }
