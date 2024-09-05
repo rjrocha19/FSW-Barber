@@ -6,7 +6,6 @@ import Image from "next/image"
 import { db } from "./_lib/prisma"
 import { BarbershopItem } from "./_components/barbershop-item"
 import { BookingItem } from "./_components/booking-item"
-import { Footer } from "./_components/footer"
 
 export default async function Home() {
   const barbershops = await db.barbershop.findMany({})
@@ -113,8 +112,6 @@ export default async function Home() {
           ))}
         </div>
       </div>
-
-      <Footer />
     </main>
   )
 }

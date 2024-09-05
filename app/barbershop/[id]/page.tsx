@@ -1,5 +1,4 @@
-import { Footer } from "@/app/_components/footer"
-import { PhoneItem } from "@/app/_components/phone-item"
+import PhoneItem from "@/app/_components/phone-item"
 import ServiceItem from "@/app/_components/service-item"
 import { Button } from "@/app/_components/ui/button"
 import { db } from "@/app/_lib/prisma"
@@ -99,9 +98,6 @@ export default async function BarbershopPage({ params }: BarbershopItemProps) {
           <PhoneItem key={phone} phone={phone} />
         ))}
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   )
 }
