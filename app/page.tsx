@@ -6,6 +6,7 @@ import Image from "next/image"
 import { db } from "./_lib/prisma"
 import { BarbershopItem } from "./_components/barbershop-item"
 import { BookingItem } from "./_components/booking-item"
+import { quickSearchOptions } from "./_components/search"
 
 export default async function Home() {
   const barbershops = await db.barbershop.findMany({})
@@ -35,50 +36,17 @@ export default async function Home() {
 
         {/* quick search */}
         <div className="flex gap-3 mt-6 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
-          <Button variant="secondary" className="gap-2">
-            <Image src="/Cabelo.svg" alt="Cabelo" width={16} height={16} />
-            <p className="text-sm">Cabelo</p>
-          </Button>
-
-          <Button variant="secondary" className="gap-2">
-            <Image src="/Barba.svg" alt="Barba" width={16} height={16} />
-            <p className="text-sm">Barba</p>
-          </Button>
-
-          <Button variant="secondary" className="gap-2">
-            <Image
-              src="/Acabamento.svg"
-              alt="Acabamento"
-              width={16}
-              height={16}
-            />
-            <p className="text-sm">Acabamento</p>
-          </Button>
-
-          <Button variant="secondary" className="gap-2">
-            <Image
-              src="/Sobrancelha.svg"
-              alt="Sobrancelha"
-              width={16}
-              height={16}
-            />
-            <p className="text-sm">Sobrancelha</p>
-          </Button>
-
-          <Button variant="secondary" className="gap-2">
-            <Image src="/Massagem.svg" alt="Massagem" width={16} height={16} />
-            <p className="text-sm">Massagem</p>
-          </Button>
-
-          <Button variant="secondary" className="gap-2">
-            <Image
-              src="/Hidratação.svg"
-              alt="Hidratação"
-              width={16}
-              height={16}
-            />
-            <p className="text-sm">Hidratação</p>
-          </Button>
+          {quickSearchOptions.map((option) => (
+            <Button key={option.title} variant="secondary" className="gap-2">
+              <Image
+                src={option.imageUrl}
+                alt={option.title}
+                width={16}
+                height={16}
+              />
+              <p className="text-sm">{option.title}</p>
+            </Button>
+          ))}
         </div>
 
         {/* Image */}
