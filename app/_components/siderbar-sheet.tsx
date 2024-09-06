@@ -29,7 +29,7 @@ export default function SiderbarSheet() {
               <LogInIcon />
             </Button>
           </DialogTrigger>
-          <DialogContent className="w-[]">
+          <DialogContent className="w-[90%]">
             <DialogHeader>
               <DialogTitle>Faça login na plataforma</DialogTitle>
               <DialogDescription>
@@ -37,14 +37,14 @@ export default function SiderbarSheet() {
               </DialogDescription>
             </DialogHeader>
 
-            <Button variant="outline" className="flex items-center gap-2">
+            <Button variant="outline" className="flex font-bold gap-1">
               <Image
                 src="/GoogleIcon.svg"
                 alt="Google"
                 width={18}
                 height={18}
               />
-              <p>Google</p>
+              Google
             </Button>
           </DialogContent>
         </Dialog>
