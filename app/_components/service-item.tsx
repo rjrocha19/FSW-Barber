@@ -1,7 +1,7 @@
-import type { BarbershopService } from "@prisma/client"
-import Image from "next/image"
-import { Button } from "./ui/button"
-import { Card, CardContent } from "./ui/card"
+import type { BarbershopService } from '@prisma/client'
+import Image from 'next/image'
+import { Button } from './ui/button'
+import { Card, CardContent } from './ui/card'
 
 interface ServiceItemProps {
   service: BarbershopService
@@ -29,9 +29,9 @@ export default function ServiceItem({ service }: ServiceItemProps) {
           {/* price and button */}
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-primary">
-              {Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
+              {Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
               }).format(Number(service.price))}
             </p>
 

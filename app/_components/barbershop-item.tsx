@@ -1,13 +1,13 @@
-import type { Barbershop } from "@prisma/client"
+import type { Barbershop } from '@prisma/client'
 
-import { Card, CardContent } from "./ui/card"
-import { Button } from "./ui/button"
-import { Badge } from "./ui/badge"
+import { Card, CardContent } from './ui/card'
+import { Button } from './ui/button'
+import { Badge } from './ui/badge'
 
-import { StarIcon } from "lucide-react"
+import { StarIcon } from 'lucide-react'
 
-import Link from "next/link"
-import Image from "next/image"
+import Link from 'next/link'
+import Image from 'next/image'
 
 interface BarbershopItemProps {
   barbershop: Barbershop

@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { Button } from "./ui/button"
-import { SheetClose, SheetContent, SheetHeader, SheetTitle } from "./ui/sheet"
-import { quickSearchOptions } from "../_constants/search"
-import Link from "next/link"
-import Image from "next/image"
-import { CalendarIcon, HomeIcon, LogInIcon, LogOutIcon } from "lucide-react"
+import { Button } from './ui/button'
+import { SheetClose, SheetContent, SheetHeader, SheetTitle } from './ui/sheet'
+import { quickSearchOptions } from '../_constants/search'
+import Link from 'next/link'
+import Image from 'next/image'
+import { CalendarIcon, HomeIcon, LogInIcon, LogOutIcon } from 'lucide-react'
 
 import {
   Dialog,
@@ -14,13 +14,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog"
-import { signIn, signOut, useSession } from "next-auth/react"
-import { Avatar, AvatarImage } from "./ui/avatar"
+} from './ui/dialog'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { Avatar, AvatarImage } from './ui/avatar'
 
 export default function SiderbarSheet() {
   const { data } = useSession()
-  const handleLoginWithGoogleClick = () => signIn("google")
+  const handleLoginWithGoogleClick = () => signIn('google')
   const handleLogoutClick = () => signOut()
 
   return (
@@ -32,7 +32,7 @@ export default function SiderbarSheet() {
         {data?.user ? (
           <div className="flex items-center gap-2">
             <Avatar>
-              <AvatarImage alt="avatar" src={data?.user?.image ?? ""} />
+              <AvatarImage alt="avatar" src={data?.user?.image ?? ''} />
             </Avatar>
 
             <div>
@@ -92,7 +92,7 @@ export default function SiderbarSheet() {
       </div>
 
       <div className="flex flex-col gap-1 py-5 border-b border-solid">
-        {quickSearchOptions.map((option) => (
+        {quickSearchOptions.map(option => (
           <Button
             key={option.title}
             className="justify-start gap-2"

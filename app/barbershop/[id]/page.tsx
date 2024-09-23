@@ -1,13 +1,13 @@
-import PhoneItem from "@/app/_components/phone-item"
-import ServiceItem from "@/app/_components/service-item"
-import SiderbarSheet from "@/app/_components/siderbar-sheet"
-import { Button } from "@/app/_components/ui/button"
-import { Sheet, SheetTrigger } from "@/app/_components/ui/sheet"
-import { db } from "@/app/_lib/prisma"
-import { ChevronLeftIcon, MapPinIcon, MenuIcon, StarIcon } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { notFound } from "next/navigation"
+import PhoneItem from '@/app/_components/phone-item'
+import ServiceItem from '@/app/_components/service-item'
+import SiderbarSheet from '@/app/_components/siderbar-sheet'
+import { Button } from '@/app/_components/ui/button'
+import { Sheet, SheetTrigger } from '@/app/_components/ui/sheet'
+import { db } from '@/app/_lib/prisma'
+import { ChevronLeftIcon, MapPinIcon, MenuIcon, StarIcon } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 interface BarbershopItemProps {
   params: {
@@ -93,7 +93,7 @@ export default async function BarbershopPage({ params }: BarbershopItemProps) {
           Serviços
         </h2>
         <div className="space-y-4">
-          {barbershop.services.map((services) => (
+          {barbershop.services.map(services => (
             <ServiceItem key={services.id} service={services} />
           ))}
         </div>
@@ -101,7 +101,7 @@ export default async function BarbershopPage({ params }: BarbershopItemProps) {
 
       {/* Contact */}
       <div className="space-y-3 p-5">
-        {barbershop.phones.map((phone) => (
+        {barbershop.phones.map(phone => (
           <PhoneItem key={phone} phone={phone} />
         ))}
       </div>

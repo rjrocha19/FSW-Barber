@@ -1,17 +1,17 @@
-import Header from "./_components/header"
-import { Button } from "./_components/ui/button"
-import Image from "next/image"
-import { db } from "./_lib/prisma"
-import { BarbershopItem } from "./_components/barbershop-item"
-import { BookingItem } from "./_components/booking-item"
-import { quickSearchOptions } from "./_constants/search"
-import Search from "./_components/search"
+import Header from './_components/header'
+import { Button } from './_components/ui/button'
+import Image from 'next/image'
+import { db } from './_lib/prisma'
+import { BarbershopItem } from './_components/barbershop-item'
+import { BookingItem } from './_components/booking-item'
+import { quickSearchOptions } from './_constants/search'
+import Search from './_components/search'
 
 export default async function Home() {
   const barbershops = await db.barbershop.findMany({})
   const popularBarbershops = await db.barbershop.findMany({
     orderBy: {
-      name: "desc",
+      name: 'desc',
     },
   })
 
@@ -30,7 +30,7 @@ export default async function Home() {
 
         {/* quick search */}
         <div className="flex gap-3 mt-6 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
-          {quickSearchOptions.map((option) => (
+          {quickSearchOptions.map(option => (
             <Button key={option.title} variant="secondary" className="gap-2">
               <Image
                 src={option.imageUrl}
@@ -60,7 +60,7 @@ export default async function Home() {
           Recomendados
         </h2>
         <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
-          {barbershops.map((barbershop) => (
+          {barbershops.map(barbershop => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
@@ -69,7 +69,7 @@ export default async function Home() {
           Populares
         </h2>
         <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
-          {popularBarbershops.map((barbershop) => (
+          {popularBarbershops.map(barbershop => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
