@@ -28,29 +28,27 @@ export default function Search() {
     router.push(`/barbershop?search=${data.search}`)
   }
   return (
-    <>
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(handleSubmit)}
-          className="flex gap-2 pt-3"
-        >
-          <FormField
-            control={form.control}
-            name="search"
-            render={({ field }) => (
-              <FormItem className='w-full'>
-                <FormControl>
-                  <Input placeholder="Faça sua busca..." {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit">
-            <SearchIcon />
-          </Button>
-        </form>
-      </Form>
-    </>
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(handleSubmit)}
+        className="flex gap-2 pt-3"
+      >
+        <FormField
+          control={form.control}
+          name="search"
+          render={({ field }) => (
+            <FormItem className='w-full'>
+              <FormControl>
+                <Input placeholder="Faça sua busca..." {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit">
+          <SearchIcon />
+        </Button>
+      </form>
+    </Form>
   )
 }
