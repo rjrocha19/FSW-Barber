@@ -37,7 +37,7 @@ export default function Search() {
           control={form.control}
           name="search"
           render={({ field }) => (
-            <FormItem className='w-full'>
+            <FormItem className="w-full">
               <FormControl>
                 <Input placeholder="Faça sua busca..." {...field} />
               </FormControl>

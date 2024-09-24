@@ -97,14 +97,17 @@ export default function SiderbarSheet() {
             key={option.title}
             className="justify-start gap-2"
             variant="ghost"
+            asChild
           >
-            <Image
-              src={option.imageUrl}
-              alt={option.title}
-              height={18}
-              width={18}
-            />
-            {option.title}
+            <Link href={`/barbershop?service=${option.title}`}>
+              <Image
+                src={option.imageUrl}
+                alt={option.title}
+                height={18}
+                width={18}
+              />
+              {option.title}
+            </Link>
           </Button>
         ))}
       </div>
